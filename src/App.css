@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+/* .profile{
+  border: 2px solid black;
+  font-size:30px;
+  border-radius: 13px;
+  border-color: red;
+  background-color: aqua;
+  color: black;
+}
+.profile:hover{
+background-color: black;
+color: antiquewhite;
+}
+.pimg{
+  text-decoration: none;
+}
+
+.pspace{
+  padding:5px 10px;
+} */

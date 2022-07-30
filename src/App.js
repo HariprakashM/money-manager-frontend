@@ -1,24 +1,81 @@
 import logo from './logo.svg';
 import './App.css';
+import ReactDOM from "react-dom/client";
+import "../src/sb-admin-2.min.css"
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
+import Incomelist from './Incomelist';
+import Expenselist from './Expenselist';
+import Addincome from './Addincome';
+import Addexpense from './Addexpense';
+import Dashboard from './Dashboard';
+import Expenseedit from './Expenseedit';
+import Incomeedit from './Incomeedit';
+import Login from './Login';
+import Register from './Register';
+import Portal from './Portal';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/portal" element={<Portal />} >
+          <Route path="dashboard" element={<Dashboard />} />
+          
+          <Route path="incomelist" element={<Incomelist />} />
+          <Route path="expenselist" element={<Expenselist />} />
+          <Route path="expenselist/edit/:id" element={<Expenseedit />} />
+          <Route path="incomelist/edit/:id" element={<Incomeedit />} />
+          <Route path="addincome" element={<Addincome />} />
+          <Route path="addexpense" element={<Addexpense />} />
+        </Route>
+      </Routes>
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <div id="wrapper">
+        <Sidebar />
+        <div id="content-wrapper" class="d-flex flex-column">
+          <div id="content">
+            <Topbar />
+            <div class="container-fluid">
+              <Routes>
+                <Route path="/" element={<Dashboard/>} />
+                <Route path="/incomelist" element={<Incomelist />} />
+                <Route path="/expenselist" element={<Expenselist />} />
+                <Route path="/expenselist/edit/:id" element={<Expenseedit />} />
+                <Route path="/incomelist/edit/:id" element={<Incomeedit />} />
+                <Route path="/addincome" element={<Addincome />} />
+                <Route path="/addexpense" element={<Addexpense />} />
+                
+              </Routes>
+              
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+      */}
+    </BrowserRouter>
   );
 }
 
